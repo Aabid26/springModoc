@@ -23,9 +23,9 @@
                   <a href="#" class="pass">Forgot password</a><pre></pre>
                   <button type="submit" class="btn" name="login">Login</button>
                   <pre></pre>
-                  Not Registered? Click 
+                  Not Registered? 
                 
-                  <a href="./registration" class="bttn">here</a>
+                  <a href="/registration_form" class="bttn"> Click here</a>
                   
               </form>
           

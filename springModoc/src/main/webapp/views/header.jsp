@@ -14,13 +14,13 @@
            
        <ul id="header" >
         <img src="/images/modocnew.png"/>
-            <li><a href="#">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="#">About&nbspUs</a></li>
            
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Careers</a></li>
             <div style="width: 10%; margin-left: 82%; margin-top: -2%;">
-               <a href="./registration.jsp"  role="button"><span class="fa fa-user"></span> <b>Register</b></a>
+               <a href="/registration_form"  role="button"><span class="fa fa-user"></span> <b>Register</b></a>
                
         </ul>
     </div>
