@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.fasterxml.jackson.annotation.JsonInclude.Include"%>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
@@ -22,6 +23,11 @@
           }
         }
       </style>
+      <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
+
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
       <script type="text/javascript">
 								      function myfun(){
 									           alert(document.getElementById("txtUrl").value);
@@ -32,128 +38,78 @@
   
       
       <!-- Custom styles for this template -->
-     
+      <link rel="stylesheet" type="text/css" href="./index2.css">
+      <link rel="stylesheet" type="text/css" href="./index.css">
     <link href="./navbar-top-fixed.css" rel="stylesheet">
  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-      
-       
-          
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">MODOC</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+<header>
+   <div class="nav" >
            
-            <span class="navbar-text">
-                <a href="checkout_cart" class="btn btn-dark">Cart</a>
-                <a href="profile" class="btn btn-dark">Welcome ${username }</a>
-            </span>
-        <!--   <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button> 
-            </form> --> 
-          </div>
-        </div>
-      </nav>
-      
-    </header>
-   <div></div> 
- <div method=post th:action="@{/sent_to_cart}" th:object="${cartItem}">
-     <a name="#periodic"></a>
-   
-      <div class="card mb-3" style="max-width:auto">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src=".././back.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title" th:name="basic">Basic Service</h5>
-          <p class="card-text">
-            <ul class="list-inline">
-                <li class="list-inline-item">1000kms or 1 month warranty</li>
-                <li class="list-inline-item">Every 3000kms or 3 months <b>(recommended)</b></li>
-                
-              </ul>
+       <ul id="header" >
+        <img src="/images/modocnew.png"/>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">About&nbspUs</a></li>
+            <li><a href="#">FAQ</a></li>
+           
+            <div style="width: 40%; margin-left: 80%; margin-top: -2%">
+           
+             <a href="checkout_cart" role="button"><span class="fa fa-shopping-cart"></span>Cart  </a>
+            <a href="/profile"  role="button" ><span class="fa fa-user"></span>${username}</a>
+           
             
-               <li> Air filter cleaning</li>       
-                <li>Engine Oil Replacement</li> 
-                <li>Oil filter Replacement </li> 
-               <li>Coolant Top Up</li>  
-               <a href="#"><u>3+ more</u></a>
-         </p>
-            <a href="Send_to_Cart" class="btn btn-primary" onclick="fun()">Add to Card</a>
-        </div>
-      </div>
-      </div>
-      <div class="card mb-3" style="max-width:auto">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src=".././back.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title" name="regular service ">Regular Service</h5>
-          <p class="card-text">
-            <ul class="list-inline">
-                <li class="list-inline-item">1000kms or 1 month warranty </li>
-                <li class="list-inline-item">Every 10000kms or 6 months <b>(recommended)</b></li>
-                
-              </ul>
-                   
-                <li>Engine Oil Replacement</li> 
-                <li>Oil filter Replacement </li> 
-               <li>Coolant Top Up</li>  
-               <li>Fuel Filter Replacement</li>
-               <a href="#"><u>10+ more</u></a>
-               
-            
-         </p>
-         <!--<span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Select your  car">
-            <button class="btn btn-primary" type="button" disabled>Select Car</button> -->
-          </span>
-            <a href="Send_to_Cart" class="btn btn-primary" onclick='fun()'>Add to Card</a>
-        </div>
-      </div>
-      </div>
-      </div>
-      <div class="card mb-3" style="max-width:auto">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src=".././back.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title" id="comprehensive">Comprehensive Service</h5>
-          <p class="card-text">
-            <ul class="list-inline">
-                <li class="list-inline-item">1000kms or 1 month warranty</li>
-                <li class="list-inline-item">Every 20,000kms or 12 months <b>(recommended)</b>
-                </li>
-                
-              </ul>
+             </div>
              
-               <li> Air filter cleaning</li>       
-                <li>Engine Oil Replacement</li> 
-                <li>Oil filter Replacement </li> 
-               <li>Coolant Top Up</li>  
-               <a href="#"><u>15+ more</u></a>
-
-         </p>
-            <a href="Send_to_Cart" class="btn btn-primary"  onclick='fun()'>Add to Card </a>
-            	
+             
+             
+        </ul>
+    </div>
+    </header>
+     <div class="card" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src=".././back.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col">
+        <div class="card">
+          <h5 class="title" th:name="basic">Basic Service</h5>
+         <div style="width: 50%">Air filter cleaning       
+                Engine Oil Replacement 
+                Oil filter Replacement 
+                Coolant Top Up </div> 
+             
+      <div style="width: auto; margin-left:65%; margin-top: -1%">
+           <button type="submit" class="btn" hover="button:hover"  name="login">AddtoCard</button></div>
+           
         </div>
       </div>
+      </div>
+      </div>
+    <div class="card" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src=".././back.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col">
+        <div class="card">
+          <h5 class="title" th:name="basic">regular Service</h5>
+         
+               <div style="width: 50%">Air filter cleaning       
+                Engine Oil Replacement 
+                Oil filter Replacement 
+                Coolant Top Up </div>  
+             
+      <div style="width: auto; margin-left:65%; margin-top: -1%">
+           <button type="submit" class="btn" hover="button:hover"  name="login">AddtoCard</button></div>
+           
         </div>
- </div>
- </div>
- </div>
+      </div>
+      </div>
+      </div>
+<%@ include file="footer.jsp" %>
+ 
  </body>
 
 </html>

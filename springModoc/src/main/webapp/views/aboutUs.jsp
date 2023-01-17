@@ -73,10 +73,10 @@
           <div class="card">
             <img src="./images/car1.jpg" alt="John" style="width:100%">
             <div class="container">
-              <h2>Ashhar Atif</h2>
+              <h2>Aabid Zeeshan</h2>
               <p class="title">Designer</p>
               <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
-              <p>ashharatif@gmail.com</p>
+              <p>aabidzeeshan01@gmail.com</p>
               <p><button class="button">Contact</button></p>
             </div>
           </div>

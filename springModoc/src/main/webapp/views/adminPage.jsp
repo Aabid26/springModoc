@@ -13,20 +13,35 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
+	 <link rel="stylesheet" type="text/css" href="./index2.css">
+      <link rel="stylesheet" type="text/css" href="./index.css">
 <title>Document</title>
 </head>
 
-<body class="bg-dark">
-	 <%@include file="header.jsp" %>
-	<div class="jumbotron text-center">
+<body >
+	 <header>
+   <div class="nav" >
+           
+       <ul id="header" >
+        <img src="/images/modocnew.png"/>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">About&nbspUs</a></li>
+            <li><a href="#">FAQ</a></li>
+                 
+        </ul>
+    </div>
+    </header>
+   <div class="jumbotron text-center" align="center">
 		<h1 class="display-4">Welcome Back, Admin</h1><hr>
 		<p>Manage your data from this Admin Panel</p>
-	</div><br>
-	
-			<div class="col-sm-3 pt-4">
-				<div class="card" style="background-color: white;">
+	</div>
+
+			<div  style="height: auto ; width:auto;"  align="center" >
+			<div class="row" >
+			<div class="column" >
+				<div style="background-color: white;" >
 					<div class="card-body text-center">
-						<h4 class="card-title">Products</h4>
+						<h4 class="title">Products</h4>
 						<p>---------------------------------------------</p>
 						<p class="card-text">Manage all the products here.</p>
 						<a href="/admin/products" class="card-link btn btn-primary">Manage</a>
@@ -34,10 +49,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3 pt-4">
-				<div class="card" style="background-color: white;">
+			<div class="column">
+				<div  style="background-color: white;">
 					<div class="card-body text-center">
-						<h4 class="card-title">Customers</h4>
+						<h4 class="title">Customers</h4>
 						<p>---------------------------------------------</p>
 						<p class="card-text">Manage all the customer here.</p>
 						<a href="/admin/customers" class="card-link btn btn-primary">Manage</a>
@@ -48,18 +63,8 @@
 		</div>
 	</div>
 
+		
 
-
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"></script>
+		<%@ include file="footer.jsp" %>
 </body>
 </html>

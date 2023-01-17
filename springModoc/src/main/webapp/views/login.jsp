@@ -25,7 +25,8 @@
                   <pre></pre>
                   Not Registered? 
                 
-                  <a href="/registration_form" class="bttn"> Click here</a>
+                   
+                  <a href="./registration" class="bttn">  Click here</a>
                   
               </form>
           
