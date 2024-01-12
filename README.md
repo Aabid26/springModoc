@@ -1,13 +1,13 @@
-# first
+# My first Working SpringBoot application 
 Spring_Project_Modoc
 
 # Configure Database
 Create Database modoc |
 Make Necessary change in 'application.property' |
-database.username & password
+database.username & password --
 desired port 
 
-# Login
+# Logins
 Admin Login
 
 admin@gmail.com | 
